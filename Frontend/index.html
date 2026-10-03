@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AI-powered translation platform. Translate beyond words with Grok AI." />
+  <title>Translūce — AI Translation Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════
+       AMBIENT BACKGROUND
+       ══════════════════════════════════════════ -->
+  <div class="ambient-bg" aria-hidden="true">
+    <div class="ambient-orb ambient-orb--1"></div>
+    <div class="ambient-orb ambient-orb--2"></div>
+    <div class="ambient-orb ambient-orb--3"></div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       NAVIGATION
+       ══════════════════════════════════════════ -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+
+      <!-- Logo -->
+      <a href="#" class="nav__logo" aria-label="Translūce Home">
+        <div class="nav__logo-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+            <rect x="2" y="2" width="24" height="24" rx="6" stroke="currentColor" stroke-width="2"/>
+            <path d="M8 10h12M8 14h8M8 18h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <circle cx="21" cy="18" r="3" fill="currentColor" opacity="0.5"/>
+          </svg>
+        </div>
+        <span class="nav__logo-text">Translūce</span>
+      </a>
+
+      <!-- Links -->
+    <div class="nav__links">
+        <a href="#about" class="nav__link">About</a>
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="nav__link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          GitHub
+        </a>
+
+      <!-- History Toggle Button -->
+      <button class="nav__theme-toggle" id="historyToggle" aria-label="View History" title="History & Phrasebook">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+      </button>
+
+      <!-- Theme Toggle (Already exists) -->
+        <button class="nav__theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <button class="nav__theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <svg class="theme-icon theme-icon--sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <svg class="theme-icon theme-icon--moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+          </svg>
+        </button>
+    </div>
+
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════════
+       HERO SECTION
+       ══════════════════════════════════════════ -->
+  <header class="hero">
+    <div class="hero__badge">
+      <span class="hero__badge-dot"></span>
+      Powered by Grok AI
+    </div>
+    <h1 class="hero__title">
+      Translate Beyond <span class="hero__title-accent">Words</span>
+    </h1>
+    <p class="hero__subtitle">
+  Experience AI-driven translation that preserves meaning, tone, and cultural nuance across 10 languages — instantly.
+</p>
+  </header>
+
+  <!-- ══════════════════════════════════════════
+       TRANSLATION CARD
+       ══════════════════════════════════════════ -->
+  <main class="translate" id="translate">
+    <div class="translate__card">
+
+            <!-- Language Selectors -->
+      <div class="translate__lang-bar">
+
+        <!-- FROM -->
+        <div class="translate__lang-select-wrapper">
+          <label class="translate__lang-label">From</label>
+
+          <!-- keep native select (hidden) for compatibility -->
+          <select id="sourceLang" class="translate__lang-select translate__lang-select--native" aria-label="Source language" hidden>
+            <option value="en" selected>English</option>
+            <option value="ur">Urdu — اردو</option>
+            <option value="ps">Pashto — پښتو</option>
+            <option value="ar">Arabic — العربية</option>
+            <option value="fr">French — Français</option>
+            <option value="de">German — Deutsch</option>
+            <option value="es">Spanish — Español</option>
+            <option value="hi">Hindi — हिन्दी</option>
+            <option value="zh">Chinese — 中文</option>
+            <option value="ja">Japanese — 日本語</option>
+          </select>
+
+          <!-- custom dropdown UI -->
+          <div class="lang-dd" data-lang-dd="source">
+            <button type="button" class="lang-dd__btn" id="sourceLangBtn" aria-haspopup="listbox" aria-expanded="false">
+              <span class="lang-dd__flag" id="sourceLangFlag"></span>
+              <span class="lang-dd__text" id="sourceLangText">English</span>
+              <svg class="lang-dd__caret" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="lang-dd__menu" id="sourceLangMenu" role="listbox" hidden></div>
+          </div>
+        </div>
+
+        <!-- SWAP -->
+        <button class="translate__swap" id="swapLangs" aria-label="Swap languages" type="button">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 16l-4-4 4-4"/>
+            <path d="M17 8l4 4-4 4"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+          </svg>
+        </button>
+
+        <!-- TO -->
+        <div class="translate__lang-select-wrapper">
+          <label class="translate__lang-label">To</label>
+
+          <select id="targetLang" class="translate__lang-select translate__lang-select--native" aria-label="Target language" hidden>
+            <option value="en">English</option>
+            <option value="ur" selected>Urdu — اردو</option>
+            <option value="ps">Pashto — پښتو</option>
+            <option value="ar">Arabic — العربية</option>
+            <option value="fr">French — Français</option>
+            <option value="de">German — Deutsch</option>
+            <option value="es">Spanish — Español</option>
+            <option value="hi">Hindi — हिन्दी</option>
+            <option value="zh">Chinese — 中文</option>
+            <option value="ja">Japanese — 日本語</option>
+          </select>
+
+          <div class="lang-dd" data-lang-dd="target">
+            <button type="button" class="lang-dd__btn" id="targetLangBtn" aria-haspopup="listbox" aria-expanded="false">
+              <span class="lang-dd__flag" id="targetLangFlag"></span>
+              <span class="lang-dd__text" id="targetLangText">Urdu — اردو</span>
+              <svg class="lang-dd__caret" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="lang-dd__menu" id="targetLangMenu" role="listbox" hidden></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ═══════════════════════════════════════════
+        SOURCE INPUT + TOOLS + TONE + STATUS
+      ═══════════════════════════════════════════ -->
+      <div class="translate__input-area" id="inputArea">
+
+        <!-- Textarea -->
+        <textarea
+          id="sourceText"
+          class="translate__textarea"
+          placeholder="Type or paste text to translate…"
+          rows="6"
+          maxlength="5000"
+          aria-label="Text to translate"
+        ></textarea>
+
+        <!-- File Preview Overlay -->
+        <div class="file-preview" id="filePreview">
+          <div class="file-preview__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+          </div>
+          <div class="file-preview__info">
+            <div class="file-preview__name" id="fileName">document.txt</div>
+            <div class="file-preview__size" id="fileSize">12 KB</div>
+          </div>
+          <button class="file-preview__remove" id="removeFileBtn" title="Remove file" type="button">✕</button>
+        </div>
+
+        <!-- Tools Row: Upload + Mic + Listen + Char Count -->
+        <div class="translate__input-tools">
+          <div class="translate__tool-group">
+
+            <!-- Upload -->
+            <button class="translate__tool-btn" id="uploadBtn" title="Upload Document" type="button">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="17 8 12 3 7 8"></polyline>
+                <line x1="12" y1="3" x2="12" y2="15"></line>
+              </svg>
+            </button>
+            <input type="file" id="fileInput" accept=".txt,.md,.csv,.json,.srt,.html" style="display:none;">
+
+            <!-- Mic -->
+            <button class="translate__tool-btn" id="micBtn" title="Speak into microphone" type="button">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/>
+                <path d="M19 10v2a7 7 0 01-14 0v-2"/>
+                <line x1="12" y1="19" x2="12" y2="23"/>
+                <line x1="8" y1="23" x2="16" y2="23"/>
+              </svg>
+              <span id="micStatusText" style="display:none;"></span>
+            </button>
+
+            <!-- Listen Source -->
+            <button class="translate__tool-btn" id="speakSourceBtn" title="Listen to input text" type="button">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                <path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/>
+              </svg>
+            </button>
+
+          </div>
+
+          <div class="translate__char-count">
+            <span id="charCount">0</span> / 5,000
+          </div>
+        </div>
+      </div>
+
+      <!-- 🎭 Tone Selector (FULL WIDTH - separate block) -->
+      <div class="tone-selector" id="toneSelector">
+        <div class="tone-selector__label">
+          <span>😊 Translation Tone</span>
+        </div>
+
+        <div class="tone-selector__tabs" role="tablist">
+          <div class="tone-selector__slider" id="toneSlider"></div>
+
+          <button class="tone-tab is-active" data-tone="neutral" role="tab" aria-selected="true" type="button">
+            <span class="tone-tab__emoji">⚖️</span>
+            <span class="tone-tab__label">Neutral</span>
+          </button>
+
+          <button class="tone-tab" data-tone="formal" role="tab" aria-selected="false" type="button">
+            <span class="tone-tab__emoji">💼</span>
+            <span class="tone-tab__label">Formal</span>
+          </button>
+
+          <button class="tone-tab" data-tone="casual" role="tab" aria-selected="false" type="button">
+            <span class="tone-tab__emoji">💬</span>
+            <span class="tone-tab__label">Casual</span>
+          </button>
+
+          <button class="tone-tab" data-tone="romantic" role="tab" aria-selected="false" type="button">
+            <span class="tone-tab__emoji">💖</span>
+            <span class="tone-tab__label">Romantic</span>
+          </button>
+
+          <button class="tone-tab" data-tone="genz" role="tab" aria-selected="false" type="button">
+            <span class="tone-tab__emoji">🔥</span>
+            <span class="tone-tab__label">Gen-Z</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Live Status (FULL WIDTH) -->
+      <div class="translate__status" id="translateStatus">
+        <span class="translate__status-dot" id="statusDot"></span>
+        <span id="statusText">Start typing to translate…</span>
+      </div>
+
+      <!-- Result Area -->
+      <div class="translate__result" id="resultArea"></div>
+
+      <!-- Error Area -->
+      <div class="translate__error" id="errorArea"></div>
+
+      <!-- Live translation status (no manual button)
+      <div class="translate__status" id="translateStatus">
+        <span class="translate__status-dot" id="statusDot"></span>
+        <span id="statusText">Start typing to translate…</span>
+      </div> -->
+
+      <!-- Result Area -->
+      <div class="translate__result" id="resultArea">
+        <!-- Populated by JavaScript -->
+      </div>
+
+      <!-- Error Area -->
+      <div class="translate__error" id="errorArea">
+        <!-- Populated by JavaScript -->
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ══════════════════════════════════════════
+       ABOUT SECTION
+       ══════════════════════════════════════════ -->
+  <section class="about" id="about">
+    <div class="about__inner">
+      <h2 class="about__title">Built for clarity. Designed for everyone.</h2>
+      <div class="about__grid">
+        <div class="about__card">
+          <div class="about__card-icon">⚡</div>
+          <h3>Lightning Fast</h3>
+          <p>Get translations in under 2 seconds powered by the Grok AI engine.</p>
+        </div>
+        <div class="about__card">
+          <div class="about__card-icon">🎯</div>
+          <h3>Context-Aware</h3>
+          <p>AI understands idioms, cultural nuance, and meaning — not just words.</p>
+        </div>
+        <div class="about__card">
+          <div class="about__card-icon">🔒</div>
+          <h3>Private & Secure</h3>
+          <p>Your text is never stored. All translations are processed in real-time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       FOOTER
+       ══════════════════════════════════════════ -->
+  <footer class="footer">
+    <p>Crafted with precision &middot; Translūce v1.0</p>
+  </footer>
+
+    <!-- ═══════════════════════════════════════════════════
+       🕰️ HISTORY & PHRASEBOOK SIDEBAR
+       ═══════════════════════════════════════════════════ -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar__header">
+      <div class="sidebar__tabs">
+        <button class="sidebar__tab is-active" id="tabHistory">History</button>
+        <button class="sidebar__tab" id="tabSaved">⭐ Saved</button>
+      </div>
+      <button class="sidebar__close" id="closeSidebar" aria-label="Close history">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+    <div class="sidebar__content" id="sidebarContent">
+      <!-- History items injected by JS -->
+    </div>
+  </aside>
+
+<!-- ═══════════════════════════════════════════
+  🎙️ VOICE LISTENING OVERLAY (Translūce style)
+═══════════════════════════════════════════ -->
+  <div class="voice-overlay" id="voiceOverlay" aria-hidden="true">
+    <div class="voice-overlay__backdrop" id="voiceBackdrop"></div>
+
+    <div class="voice-modal" role="dialog" aria-modal="true" aria-labelledby="voiceTitle">
+      <div class="voice-modal__top">
+        <button class="voice-icon-btn" id="voiceCloseBtn" type="button" title="Close">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+            <path d="M18 6L6 18M6 6l12 12"/>
+          </svg>
+        </button>
+
+        <div class="voice-modal__title" id="voiceTitle">Voice Translate</div>
+
+        <div class="voice-icon-btn voice-icon-btn--ghost" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+            <circle cx="12" cy="5" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="12" cy="19" r="1"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="voice-modal__status" id="voiceStatusText">Listening…</div>
+
+      <!-- Waveform -->
+      <div class="voice-wave" id="voiceWave" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+
+      <div class="voice-modal__headline">
+        Talk freely — <span>AI</span> translates instantly
+      </div>
+
+      <div class="voice-transcript" id="voiceTranscript">
+        Start speaking…
+      </div>
+
+      <div class="voice-modal__bottom">
+        <button class="voice-round-btn voice-round-btn--cancel" id="voiceCancelBtn" type="button" title="Cancel">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round">
+            <path d="M18 6L6 18M6 6l12 12"/>
+          </svg>
+        </button>
+
+        <div class="voice-main-wrap">
+          <button class="voice-main-btn is-listening" id="voiceMainBtn" type="button" title="Listening">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+              <path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/>
+              <path d="M19 10v2a7 7 0 01-14 0v-2"/>
+              <line x1="12" y1="19" x2="12" y2="23"/>
+              <line x1="8" y1="23" x2="16" y2="23"/>
+            </svg>
+          </button>
+          <div class="voice-timer" id="voiceTimer">00:00</div>
+        </div>
+
+        <button class="voice-round-btn voice-round-btn--done" id="voiceDoneBtn" type="button" title="Use this text">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 6L9 17l-5-5"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
